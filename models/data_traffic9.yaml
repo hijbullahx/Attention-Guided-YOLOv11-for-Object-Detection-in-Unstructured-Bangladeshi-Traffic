@@ -1,0 +1,20 @@
+# Multi-Source Unstructured Bangladeshi Traffic Dataset Configuration
+# Sources: Mendeley BD Traffic + DhakaAI + Poribohon-BD
+# 23,648 images, 265,698 annotated bounding boxes across 9 classes
+
+path: ./dataset  # dataset root dir
+train: images/train  # train images (relative to 'path')
+val: images/val      # val images (relative to 'path')
+
+# Classes
+nc: 9
+names:
+  0: Car
+  1: Truck
+  2: Bus
+  3: Motorcycle
+  4: Bicycle
+  5: Pedestrian
+  6: Auto_Rickshaw  # CNG
+  7: Rickshaw       # Non-motorized human powered
+  8: Van

@@ -1,0 +1,60 @@
+# ============================================
+# Git Ignore Configuration for Research Repo
+# ============================================
+
+# Operating System Files
+desktop.ini
+Thumbs.db
+.DS_Store
+*.tmp
+~*
+~$*
+
+# Large Binary Presentation & Document Backups
+*.docx
+*.pptx
+*.pdf
+!LaTeX_Overleaf/figures/*.png
+
+# Presentation Materials & Large Local Exports (>6GB runs)
+"Presentation Materials/"
+Presentation Materials/
+"Version 5/"
+Version 5/
+
+# Large Zip Archives & Datasets (>50MB)
+*.zip
+datasets/
+dataset/
+data/
+
+# Model Checkpoint Weights (Host on HuggingFace / Google Drive / GitHub Releases)
+*.pt
+*.pth
+*.onnx
+*.engine
+*.tflite
+
+# Python & Environment
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+.env
+.venv/
+venv/
+thesis_env/
+build/
+dist/
+*.egg-info/
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# Training Logs & Runs
+runs/
+Colab_Runs/
+wandb/
+thesis_results/
