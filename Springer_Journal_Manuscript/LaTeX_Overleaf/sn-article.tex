@@ -21,6 +21,7 @@
 \usepackage{listings}
 \usepackage{array}
 \usepackage{url}
+\def\UrlBreaks{\do\/\do-}
 \usepackage{microtype}
 
 \raggedbottom
@@ -264,7 +265,8 @@ Table~\ref{tab:dataset_distribution} summarizes the instance counts across train
 
 \begin{table*}[t]
 \caption{Distribution of Annotated Vehicle Instances in the Curated Benchmark Dataset}\label{tab:dataset_distribution}
-\begin{tabular*}{\textwidth}{@{\extracolsep\fill}llrrr@{\extracolsep\fill}}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrr}
 \toprule
 Class Tier & Vehicle Class & Training Instances & Validation Instances & Total Instances (Share) \\
 \midrule
@@ -285,7 +287,8 @@ Class Tier & Vehicle Class & Training Instances & Validation Instances & Total I
 \midrule
 \textbf{Aggregate} & \textbf{All 9 Classes} & \textbf{212,756 (80.08\%)} & \textbf{52,942 (19.92\%)} & \textbf{265,698 (100.0\%)} \\
 \bottomrule
-\end{tabular*}
+\end{tabular}%
+}
 \end{table*}
 
 \subsection{Video-Wise Sequence Partitioning}
@@ -319,7 +322,8 @@ Table~\ref{tab:ablation} details the comprehensive quantitative findings, evalua
 
 \begin{table*}[t]
 \caption{Comprehensive Architectural Ablation, Computational Complexity, and Latency Breakdown}\label{tab:ablation}
-\begin{tabular*}{\textwidth}{@{\extracolsep\fill}lcccccccc@{\extracolsep\fill}}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccccccc}
 \toprule
 Model Configuration & Params & GFLOPs & mAP@50 & mAP@50:95 & Recall & Pre (ms) & Infer (ms) & Post (ms) & FPS \\
 \midrule
@@ -329,7 +333,8 @@ YOLOv11m + DCFM & 20.21M & 69.4 & 74.80\% & 52.40\% & \textbf{73.10\%} & 0.1 & 5
 YOLO26m Baseline & 20.12M & 68.0 & 48.20\% & 32.10\% & 53.57\% & 0.1 & 5.0 & 0.7 & 200.0 \\
 YOLO26m High-Res ($1280^2$) & 20.12M & 272.0 & 49.78\% & 34.60\% & 67.90\% & 0.2 & 6.8 & 0.9 & 147.0 \\
 \bottomrule
-\end{tabular*}
+\end{tabular}%
+}
 \end{table*}
 
 The empirical results reveal several compelling insights:
@@ -360,7 +365,8 @@ To evaluate the impact of spatial and channel attention across heterogeneous veh
 
 \begin{table*}[t]
 \caption{Detailed Class-Wise Average Precision (AP@0.50) Breakdown and Performance Gain}\label{tab:per_class}
-\begin{tabular*}{\textwidth}{@{\extracolsep\fill}llccc@{\extracolsep\fill}}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llccc}
 \toprule
 Class Tier & Vehicle Category & YOLOv11m Baseline & YOLOv11m + CBAM & Absolute Delta ($\Delta$) \\
 \midrule
@@ -381,7 +387,8 @@ Class Tier & Vehicle Category & YOLOv11m Baseline & YOLOv11m + CBAM & Absolute D
 \midrule
 \textbf{All Classes} & \textbf{Mean AP (mAP@0.50)} & \textbf{0.751 (75.10\%)} & \textbf{0.757 (75.70\%)} & \textbf{+0.60\% (Net Boost)} \\
 \bottomrule
-\end{tabular*}
+\end{tabular}%
+}
 \end{table*}
 
 \begin{itemize}
@@ -395,7 +402,8 @@ Latency and throughput benchmarks across computing platforms (Table~\ref{tab:har
 
 \begin{table*}[t]
 \caption{Cross-Platform Hardware Execution Telemetry for Proposed YOLOv11m + CBAM}\label{tab:hardware_telemetry}
-\begin{tabular*}{\textwidth}{@{\extracolsep\fill}lccccc@{\extracolsep\fill}}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccc}
 \toprule
 Computing Platform & GPU Architecture & Batch Size & Precision & Latency (ms/img) & Throughput (FPS) \\
 \midrule
@@ -404,7 +412,8 @@ Cloud Stability Single & Single NVIDIA Tesla T4 & 8 & FP16 AMP & 5.2~ms & 192.3~
 Edge Workstation & NVIDIA RTX 4000 & 8 & FP16 & 3.8~ms & 263.1~FPS \\
 Embedded Target (Est.) & NVIDIA Jetson Orin AGX & 1 & INT8 TensorRT & 6.4~ms & 156.2~FPS \\
 \bottomrule
-\end{tabular*}
+\end{tabular}%
+}
 \end{table*}
 
 As evidenced in Table~\ref{tab:hardware_telemetry}, Cloud Dual Tesla T4 achieves 212.7 FPS (4.7~ms), Single Tesla T4 achieves 192.3 FPS (5.2~ms), Edge Workstation RTX 4000 achieves 263.1 FPS (3.8~ms), and embedded Jetson Orin achieves 156.2 FPS (6.4~ms INT8 TensorRT).
