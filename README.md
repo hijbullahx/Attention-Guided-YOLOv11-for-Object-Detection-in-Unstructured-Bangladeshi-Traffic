@@ -126,7 +126,7 @@ Input Image (640x640x3)
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/Taher-7/Attention-Guided-YOLOv11-for-Object-Detection-in-Unstructured-Bangladeshi-Traffic.git
+git clone https://github.com/hijbullahx/Attention-Guided-YOLOv11-for-Object-Detection-in-Unstructured-Bangladeshi-Traffic.git
 cd Attention-Guided-YOLOv11-for-Object-Detection-in-Unstructured-Bangladeshi-Traffic
 ```
 
